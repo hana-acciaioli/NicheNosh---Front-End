@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import { TodosProvider } from './context/TodosContext.js';
+// import { GroceriesProvider } from './context/GroceriesContext.js';
+import GroceriesProvider from './context/GroceriesContext.js';
 <meta name="viewport" content="initial-scale=1, width=device-width" />;
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -17,9 +19,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <TodosProvider>
-          <App />
-        </TodosProvider>
+        <GroceriesProvider>
+          <TodosProvider>
+            <App />
+          </TodosProvider>
+        </GroceriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
